@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// demo2-MaterialApp
+// demo2-MaterialApp and Scaffold
 void main(){
   runApp(MaterialApp(
     home: Scaffold(
@@ -20,11 +20,12 @@ void main(){
           "Hello world!",
           textDirection: TextDirection.ltr,
           style: TextStyle(
-              color: Colors.brown,
+              color: Colors.greenAccent,
               fontSize: 30.0
           ),
         ),
       ),
     ),
+    theme: ThemeData.dark()
   ));
 }
