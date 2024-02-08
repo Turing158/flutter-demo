@@ -1,39 +1,34 @@
 import 'package:flutter/material.dart';
-//demo3
+//demo3-分离组件
 void main(){
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "标题Title",
-          textDirection: TextDirection.ltr
-        ),
+        title: const Text("demo3-分离组件"),
         backgroundColor: Colors.blue,
         titleTextStyle:const TextStyle(
           color: Colors.amber
         ),
       ),
-      body: HomeComp(),
+      body: const HomeComp(),
     ),
   ));
 }
 
 
 class HomeComp extends StatelessWidget{
-  // const HomeComp ({Key ? key}) : super(key: key);
+  const HomeComp({super.key});
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
     return const Center(
       child: Text(
         "Hello world",
-        textDirection: TextDirection.ltr,
         style: TextStyle(
           color: Colors.green,
-
         ),
       ),
     );
   }
-  
 }

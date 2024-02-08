@@ -5,7 +5,7 @@ void main(){
     home: Scaffold(
       appBar: AppBar(
         title: const Text(
-            "标题Title",
+            "demo4-Drawer",
             textDirection: TextDirection.ltr
         ),
         backgroundColor: Colors.blue,
@@ -16,16 +16,17 @@ void main(){
       body: HomeComp(),
       drawer:const Drawer(
         backgroundColor: Colors.lightBlue,
-        child: Center(
-          child: Text(
-            "DrawerTitle",
-            textDirection: TextDirection.ltr,
-            style: TextStyle(
-              color: Colors.greenAccent,
-              fontSize: 30.0,
-            ),
+        child:Text(
+          "DrawerTitle",
+          textScaler: TextScaler.linear(10),
+          overflow: TextOverflow.visible,
+          maxLines: 1,
+          textDirection: TextDirection.ltr,
+          style: TextStyle(
+            color: Colors.greenAccent,
+            fontSize: 30.0,
           ),
-        )
+        ),
       ),
     ),
   ));

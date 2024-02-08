@@ -5,8 +5,7 @@ void main(){
     home: Scaffold(
       appBar: AppBar(
         title: const Text(
-          "标题title",
-          textDirection: TextDirection.ltr,
+          "demo2-MaterialApp and Scaffold",
           style: TextStyle(
               color: Colors.blue,
               fontWeight: FontWeight.bold
