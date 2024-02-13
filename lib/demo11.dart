@@ -6,7 +6,7 @@ void main(){
         title:const Text("demo11"),
         backgroundColor: Colors.deepPurpleAccent,
       ),
-      body: const FlexVer(),
+      body: const RowAndColumn(),
     ),
   ));
 }
@@ -43,4 +43,48 @@ class FlexVer extends StatelessWidget{
     );
   }
 
+}
+
+
+class RowAndColumn extends StatelessWidget{
+  const RowAndColumn({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 300,
+      margin:const EdgeInsets.all(10),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(color: Colors.teal,),
+          ),
+          Container(height: 10,),//只是组件之间的分割线
+          Expanded(
+            flex: 1,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(flex: 2,child: Container(color: Colors.deepPurple,),),
+                Container(width: 10,),//只是组件之间的分割线
+                Expanded(flex: 1,child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Expanded(flex: 1,child: Container(color: Colors.tealAccent,)),
+                    Container(height: 10,),//只是组件之间的分割线
+                    Expanded(flex: 1,child: Container(color: Colors.lightBlue,))
+                  ],
+                ))
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }
