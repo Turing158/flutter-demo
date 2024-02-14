@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//demo10 线性布局
 void main(){
   runApp(MaterialApp(
     home: Scaffold(
