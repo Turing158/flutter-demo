@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// demo6
+// demo6 图片
 void main(){
   runApp(MaterialApp(
     home: Scaffold(
