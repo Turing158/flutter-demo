@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+//demo11 Flex布局
 void main(){
   runApp(MaterialApp(
     home: Scaffold(
