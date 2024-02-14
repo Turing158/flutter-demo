@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//demo3-分离组件
+//demo3 分离组件
 void main(){
   runApp(MaterialApp(
     home: Scaffold(
