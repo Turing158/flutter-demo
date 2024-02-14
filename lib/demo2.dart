@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// demo2-MaterialApp and Scaffold
+// demo2 MaterialApp and Scaffold
 void main(){
   runApp(MaterialApp(
     home: Scaffold(
