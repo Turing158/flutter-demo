@@ -29,6 +29,7 @@ class WrapTest extends StatelessWidget{
           direction: Axis.horizontal,
           alignment: WrapAlignment.start,
           runAlignment: WrapAlignment.center,
+          verticalDirection: VerticalDirection.down,
           children: [
             TextButton(onPressed: (){}, child: const Text("Btn1")),
             TextButton(onPressed: (){}, child: const Text("Btn22")),
@@ -46,5 +47,4 @@ class WrapTest extends StatelessWidget{
       ),
     );
   }
-
 }
