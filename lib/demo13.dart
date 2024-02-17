@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 // demo13 Stack堆叠
 void main(){
@@ -45,6 +44,7 @@ class StackAndAlign extends StatelessWidget{
     // TODO: implement build
     return Container(
       child: const Stack(
+        textDirection: TextDirection.ltr,
         alignment: Alignment.topCenter,
         children: [
           Align(
@@ -87,7 +87,6 @@ class StackAndAlign extends StatelessWidget{
       ),
     );
   }
-
 }
 
 
