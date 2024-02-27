@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// demo16 事件
 void main(){
   runApp(MaterialApp(
     home: Scaffold(
@@ -6,7 +7,7 @@ void main(){
         title: const Text("demo16"),
         backgroundColor: Colors.lightBlueAccent,
       ),
-      body: const Test4(),
+      body: const Test6(),
     ),
   ));
 }
@@ -138,7 +139,120 @@ class Test4 extends StatelessWidget{
             child: const Text("长按触发"),
           ),
         ),
-        Container(height: 1,color: Colors.black87,)
+        Container(height: 1,color: Colors.black87,),
+        ListTile(
+          title: GestureDetector(
+            onLongPressStart: (e)=>print("长按开始时[长按触发时]触发：$e"),
+            child: const Text("长按开始时触发"),
+          ),
+        ),
+        Container(height: 1,color: Colors.black87,),
+        ListTile(
+          title: GestureDetector(
+            onLongPressEnd: (e)=>print("长按结束时[长按抬起]触发：$e"),
+            child: const Text("长按结束时触发"),
+          ),
+        ),
+        Container(height: 1,color: Colors.black87,),
+        ListTile(
+          title: GestureDetector(
+            onLongPressDown: (e)=>print("长按按下时[单点也可]触发：$e"),
+            child: const Text("长按按下时触发"),
+          ),
+        ),
+        Container(height: 1,color: Colors.black87,),
+        ListTile(
+          title: GestureDetector(
+            onLongPressUp: ()=>print("长按抬起时触发：===="),
+            child: const Text("长按抬起时触发"),
+          ),
+        ),
+        Container(height: 1,color: Colors.black87,),
+        ListTile(
+          title: GestureDetector(
+            onLongPressMoveUpdate: (e)=>print("长按后移动更新时触发：$e"),
+            child: const Text("长按后移动更新时触发"),
+          ),
+        ),
+        Container(height: 1,color: Colors.black87,),
+        ListTile(
+          title: GestureDetector(
+            onLongPressCancel: ()=>print("长按取消时触发：===="),
+            child: const Text("长按取消时触发"),
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+
+class Test5 extends StatelessWidget{
+  const Test5({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: GestureDetector(
+          onVerticalDragStart: (e)=>print("开始垂直移动,$e"),
+          onVerticalDragUpdate: (e)=>print("持续垂直移动,$e"),
+          onVerticalDragEnd: (e)=>print("结束垂直移动,$e"),
+          onHorizontalDragStart: (e)=>print("开始水平移动,$e"),
+          onHorizontalDragUpdate: (e)=>print("持续水平移动,$e"),
+          onHorizontalDragEnd: (e)=>print("结束水平移动,$e"),
+          child: Container(
+            width: 150,
+            height: 50,
+            color: Colors.green,
+            child: const Center(
+              child: Text("按住我移动一下"),
+            ),
+          )
+      ),
+    );
+  }
+}
+
+
+
+class Test6 extends StatelessWidget{
+  const Test6({super.key});
+
+
+  @override
+  Widget build(BuildContext context) {
+    return Flex(
+      direction: Axis.horizontal,
+      children: [
+        Container(width: 5),
+        Expanded(
+          flex: 1,
+          child: AbsorbPointer(
+            absorbing: true,
+            child: Listener(
+              onPointerDown: (e)=>print("点了第一个,absorbing: true，$e"),
+              child: Container(
+                height: 50,
+                color: Colors.green,
+                child: const Text("absorbing: true"),
+              ),
+            ),
+          )),
+        Container(width: 5),
+        Expanded(
+          flex: 1,
+          child: AbsorbPointer(
+            absorbing: false,
+            child: Listener(
+              onPointerDown: (e)=>print("点了第二个,absorbing: false，$e"),
+              child: Container(
+                height: 50,
+                color: Colors.lightBlueAccent,
+                child: const Text("absorbing: false"),
+              ),
+            ),
+          )),
+        Container(width: 5),
       ],
     );
   }
