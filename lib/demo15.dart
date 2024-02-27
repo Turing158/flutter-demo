@@ -73,6 +73,9 @@ class BtnTest2 extends StatelessWidget{
           backgroundColor: MaterialStateProperty.all(Colors.lightBlueAccent),
           foregroundColor: MaterialStateProperty.all(Colors.purple),
           elevation: MaterialStateProperty.all(10),
+          alignment:Alignment.center,
+          shadowColor:MaterialStateProperty.all(Colors.black12),
+          padding:MaterialStateProperty.all(const EdgeInsets.all(10)),
           shape: MaterialStateProperty.all(RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10)
           )),
