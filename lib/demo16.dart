@@ -122,7 +122,6 @@ class Test3 extends StatelessWidget{
       ],
     );
   }
-
 }
 
 
@@ -227,14 +226,14 @@ class Test6 extends StatelessWidget{
         Container(width: 5),
         Expanded(
           flex: 1,
-          child: AbsorbPointer(
-            absorbing: true,
+          child: IgnorePointer(
+            ignoring: true,
             child: Listener(
-              onPointerDown: (e)=>print("点了第一个,absorbing: true，$e"),
+              onPointerDown: (e)=>print("点了第一个ignoring: true，$e"),
               child: Container(
                 height: 50,
                 color: Colors.green,
-                child: const Text("absorbing: true"),
+                child: const Text("ignoring: true"),
               ),
             ),
           )),
@@ -256,6 +255,5 @@ class Test6 extends StatelessWidget{
       ],
     );
   }
-
 }
 
