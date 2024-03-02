@@ -25,16 +25,15 @@ class HomePage extends StatelessWidget{
         children: [
           ListTile(
             title: ElevatedButton(
-              onPressed: ()async{
-                var result = await Navigator.pushNamed(
+              onPressed: (){
+                Navigator.pushNamed(
                     context,
                     "route1",
-                    arguments: {
+                    arguments: [
                       "TestText",
                       123
-                    }
+                    ]
                 );
-                print("返回值：$result");
               },
               child: const Text("Route1"),
             ),
@@ -62,7 +61,6 @@ class HomePage extends StatelessWidget{
 class Router1Page extends StatelessWidget{
   const Router1Page({super.key});
 
-
   @override
   Widget build(BuildContext context) {
     var args = ModalRoute.of(context)?.settings.arguments;
@@ -77,18 +75,15 @@ class Router1Page extends StatelessWidget{
           children: [
             Text("text:${argList[0]}"),
             Text("num:${argList[1]}"),
-            ElevatedButton(
-                onPressed: (){
-                  Navigator.pop(context, "我是个返回值");
-                },
-                child: const Text("back"),
-            ),
           ],
         ),
       ),
     );
   }
 }
+
+
+
 class Router2Page extends StatelessWidget{
   const Router2Page({super.key});
   @override
@@ -100,10 +95,11 @@ class Router2Page extends StatelessWidget{
       ),
       body: Center(
         child: ElevatedButton(
-            onPressed: (){
-              Navigator.pop(context);
-            }, 
-            child: const Text("back")),
+          onPressed: (){
+            Navigator.pop(context, "我是个返回值");
+          },
+          child: const Text("back"),
+        ),
       ),
     );
   }
