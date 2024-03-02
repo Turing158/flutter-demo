@@ -7,7 +7,7 @@ void main(){
       if(routeName == "noReg"){
         print("如果没有注册在route里,但是依旧要Navigator.pushNamed访问，会显示这一行，route name：$routeName");
         return MaterialPageRoute(builder: (context){
-          return const Route2Page();
+          return const Route2Page(text: "testText",);
         }
         );
       }
@@ -90,8 +90,8 @@ class Route1Page extends StatelessWidget{
 
 
 class Route2Page extends StatelessWidget{
-  const Route2Page({super.key});
-
+  const Route2Page({super.key,required this.text});
+  final String text;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -99,8 +99,8 @@ class Route2Page extends StatelessWidget{
         title: const Text("route2"),
         backgroundColor: Colors.amberAccent,
       ),
-      body: const Center(
-        child: Text("没在routes注册，也能通过Navigator.pushNamed访问"),
+      body: Center(
+        child: Text("没在routes注册，也能通过Navigator.pushNamed访问，传入值：$text"),
       ),
     );
   }
